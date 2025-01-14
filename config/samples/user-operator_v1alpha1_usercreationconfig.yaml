@@ -1,0 +1,9 @@
+apiVersion: user-operator.lcpu.dev/v1alpha1
+kind: UserCreationConfig
+metadata:
+  labels:
+    app.kubernetes.io/name: user-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: usercreationconfig-sample
+spec:
+  # TODO(user): Add fields here

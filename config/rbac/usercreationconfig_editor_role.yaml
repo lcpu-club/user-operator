@@ -1,0 +1,27 @@
+# permissions for end users to edit usercreationconfigs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: user-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: usercreationconfig-editor-role
+rules:
+- apiGroups:
+  - user-operator.lcpu.dev
+  resources:
+  - usercreationconfigs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - user-operator.lcpu.dev
+  resources:
+  - usercreationconfigs/status
+  verbs:
+  - get
